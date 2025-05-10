@@ -1,7 +1,7 @@
 {
     "name": "swcommerce/javascript-css-injector",
     "description": "SwCommerce JavaScript/CSS Injector",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "shopware-platform-plugin",
     "license": "proprietary",
     "require": {

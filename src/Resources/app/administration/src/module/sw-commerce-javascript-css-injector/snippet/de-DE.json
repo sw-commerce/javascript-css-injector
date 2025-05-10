@@ -1,52 +1,57 @@
 {
     "swcommerce-javascript-css-injector": {
         "general": {
-            "title": "Code snippets",
-            "search": "Search for snippet...",
-            "header": "Code snippets",
-            "menuTitle": "Additional js/css code snippets"
+            "title": "Code-Snippets",
+            "search": "Nach Snippet suchen...",
+            "header": "Code-Snippets",
+            "menuTitle": "Zusätzliche JS/CSS-Code-Snippets"
         },
         "columns": {
             "nameLabel": "Name",
-            "activeLabel": "Active",
-            "createdAtLabel": "Created at",
-            "salesChannelsLabel": "Applied for sales channels",
-            "renderPages": "Render on pages"
+            "activeLabel": "Aktiv",
+            "createdAtLabel": "Erstellt am",
+            "salesChannelsLabel": "Angewendet auf Verkaufskanäle",
+            "renderPages": "Auf Seiten rendern"
         },
         "helpText": {
-            "renderPages": "Input pages where you want to inject above code snippets, if left blank, then all pages will be affected for selected sales channels.",
-            "renderOnAll": "All"
+            "renderPages": "Gib Seiten ein, auf denen der obige Code eingefügt werden soll. Wenn leer, wird der Code auf allen Seiten für die ausgewählten Verkaufskanäle eingefügt.",
+            "renderOnAll": "Alle",
+            "activeFrom": "Wenn kein Datum angegeben ist, gilt es dauerhaft"
         },
         "label": {
-            "active": "Active",
+            "active": "Aktiv",
             "name": "Name",
-            "salesChannels": "Sales channels",
-            "description": "Description",
+            "salesChannels": "Verkaufskanäle",
+            "description": "Beschreibung",
             "css": "CSS/SCSS",
-            "js": "Javascript",
-            "renderPages": "Endpoints to inject code snippets"
+            "js": "JavaScript",
+            "renderPages": "Endpunkte zum Einfügen von Code-Snippets",
+            "activeFrom": "Aktiv ab",
+            "activeTo": "Aktiv bis"
         },
         "placeholder": {
-            "name": "Enter name...",
-            "salesChannels": "Choose sales channels...",
-            "description": "Enter description...",
-            "renderPages": "Endpoints to inject code snippets",
-            "renderPagesAddData": "Enter custom routes...",
-            "renderPagesValidData": "detail, account, login..."
+            "name": "Name eingeben...",
+            "salesChannels": "Verkaufskanäle auswählen...",
+            "description": "Beschreibung eingeben...",
+            "renderPages": "Endpunkte zum Einfügen von Code-Snippets",
+            "renderPagesAddData": "Benutzerdefinierte Routen eingeben...",
+            "renderPagesValidData": "detail, account, login...",
+            "activeFrom": "Aktiv ab",
+            "activeTo": "Aktiv bis"
         },
         "button": {
-            "addCodeSnippets": "Add new",
-            "cancel": "Cancel",
-            "save": "Save"
+            "addCodeSnippets": "Neu hinzufügen",
+            "cancel": "Abbrechen",
+            "save": "Speichern"
         },
         "notification": {
-            "saveSuccess": "Saved successfully",
-            "saveError": "Error occured..."
+            "saveSuccess": "Erfolgreich gespeichert",
+            "saveError": "Fehler aufgetreten..."
         }
     },
     "global": {
         "entities": {
-            "sw_commerce_code_snippet": "Code snippets"
+            "sw_commerce_code_snippet": "Code-Snippets"
         }
     }
 }
