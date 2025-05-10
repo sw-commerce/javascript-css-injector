@@ -1,0 +1,12 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_body_script %}
+    {{ parent() }}
+
+    {% if page.extensions.codeSnippets.js is not empty %}
+        <script type="text/javascript">
+            {{ page.extensions.codeSnippets.js|raw }}
+        </script>
+    {% endif %}
+
+{% endblock %}

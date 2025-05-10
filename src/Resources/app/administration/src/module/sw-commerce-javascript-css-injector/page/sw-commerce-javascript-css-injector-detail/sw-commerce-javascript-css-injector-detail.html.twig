@@ -1,0 +1,111 @@
+{% block sw_commerce_javascript_css_injector_detail %}
+    <sw-page class="sw-commerce-javascript-css-injector-detail">
+        <template #smart-bar-actions>
+            <sw-button :routerLink="{ name: 'sw.commerce.javascript.css.injector.list' }">
+                {{ $tc('swcommerce-javascript-css-injector.button.cancel') }}
+            </sw-button>
+
+            <sw-button-process
+                    v-if="codeSnippet"
+                    :isLoading="isLoading"
+                    variant="primary"
+                    @process-finish="saveFinish"
+                    @click="onClickSave">
+                {{ $tc('swcommerce-javascript-css-injector.button.save') }}
+            </sw-button-process>
+        </template>
+
+        <template #content>
+            <sw-card-view>
+                <sw-card v-if="codeSnippet" :isLoading="isLoading">
+
+                    <sw-checkbox-field
+                            :label="$tc('swcommerce-javascript-css-injector.label.active')"
+                            v-model:value="codeSnippet.active">
+                    </sw-checkbox-field>
+
+                    <sw-container
+                            columns="repeat(auto-fit, minmax(150px, 1fr))"
+                            gap="15px"
+                    >
+                        <sw-text-field
+                                :label="$tc('swcommerce-javascript-css-injector.label.name')"
+                                :placeholder="$tc('swcommerce-javascript-css-injector.placeholder.name')"
+                                v-model:value="codeSnippet.name"
+                                validation="required"
+                                :error="moduleNameError"
+                                required>
+                        </sw-text-field>
+
+                        <sw-entity-many-to-many-select
+                                :localMode="codeSnippet.isNew()"
+                                :label="$tc('swcommerce-javascript-css-injector.label.salesChannels')"
+                                :placeholder="$tc('swcommerce-javascript-css-injector.placeholder.salesChannels')"
+                                v-model:entityCollection="codeSnippet.salesChannels">
+                        </sw-entity-many-to-many-select>
+                    </sw-container>
+
+                    <sw-textarea-field
+                            :label="$tc('swcommerce-javascript-css-injector.label.description')"
+                            :placeholder="$tc('swcommerce-javascript-css-injector.placeholder.description')"
+                            v-model:value="codeSnippet.description"
+                    />
+
+                    <sw-multi-tag-select
+                            :label="$tc('swcommerce-javascript-css-injector.label.renderPages')"
+                            v-model:value="codeSnippet.renderPages"
+                            :help-text="$tc('swcommerce-javascript-css-injector.helpText.renderPages')"
+                            class="sw-order-user-card__tracking-code-select"
+                            :placeholder="$tc('swcommerce-javascript-css-injector.placeholder.renderPages')"
+                            @update:value="emitChange"
+                    >
+                        <template #message-add-data>
+                            <span>{{ $tc('swcommerce-javascript-css-injector.placeholder.renderPagesAddData') }}</span>
+                        </template>
+                        <template #message-enter-valid-data>
+                            <span>{{ $tc('swcommerce-javascript-css-injector.placeholder.renderPagesValidData') }}</span>
+                        </template>
+                    </sw-multi-tag-select>
+
+                    <sw-container
+                            columns="repeat(auto-fit, minmax(150px, 1fr))"
+                            gap="15px"
+                    >
+
+                        <sw-datepicker
+                                v-model:value="codeSnippet.activeFrom"
+                                date-type="datetime"
+                                :help-text="$tc('swcommerce-javascript-css-injector.helpText.activeFrom')"
+                                :placeholder="$tc('swcommerce-javascript-css-injector.placeholder.activeFrom')"
+                                :label="$tc('swcommerce-javascript-css-injector.label.activeFrom')"
+                        />
+
+                        <sw-datepicker
+                                v-model:value="codeSnippet.activeTo"
+                                date-type="datetime"
+                                :placeholder="$tc('swcommerce-javascript-css-injector.placeholder.activeTo')"
+                                :label="$tc('swcommerce-javascript-css-injector.label.activeTo')"
+                        />
+
+                    </sw-container>
+
+                    <sw-code-editor
+                            :label="$tc('swcommerce-javascript-css-injector.label.css')"
+                            name="css"
+                            identifier="value"
+                            completionMode="entity"
+                            v-model:value="codeSnippet.css">
+                    </sw-code-editor>
+
+                    <sw-code-editor
+                            :label="$tc('swcommerce-javascript-css-injector.label.js')"
+                            name="js"
+                            identifier="value"
+                            completionMode="entity"
+                            v-model:value="codeSnippet.js">
+                    </sw-code-editor>
+                </sw-card>
+            </sw-card-view>
+        </template>
+    </sw-page>
+{% endblock %}

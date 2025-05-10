@@ -1,0 +1,57 @@
+{
+    "swcommerce-javascript-css-injector": {
+        "general": {
+            "title": "Frammenti di codice",
+            "search": "Cerca frammento...",
+            "header": "Frammenti di codice",
+            "menuTitle": "Frammenti di codice JS/CSS aggiuntivi"
+        },
+        "columns": {
+            "nameLabel": "Nome",
+            "activeLabel": "Attivo",
+            "createdAtLabel": "Creato il",
+            "salesChannelsLabel": "Applicato ai canali di vendita",
+            "renderPages": "Visualizza sulle pagine"
+        },
+        "helpText": {
+            "renderPages": "Inserisci le pagine su cui vuoi iniettare i frammenti di codice sopra indicati; se lasciato vuoto, il codice verrà applicato a tutte le pagine per i canali di vendita selezionati.",
+            "renderOnAll": "Tutti",
+            "activeFrom": "Se non è specificata alcuna data, sarà applicato sempre"
+        },
+        "label": {
+            "active": "Attivo",
+            "name": "Nome",
+            "salesChannels": "Canali di vendita",
+            "description": "Descrizione",
+            "css": "CSS/SCSS",
+            "js": "JavaScript",
+            "renderPages": "Endpoint per inserire i frammenti di codice",
+            "activeFrom": "Attivo da",
+            "activeTo": "Attivo fino a"
+        },
+        "placeholder": {
+            "name": "Inserisci nome...",
+            "salesChannels": "Scegli canali di vendita...",
+            "description": "Inserisci descrizione...",
+            "renderPages": "Endpoint per inserire i frammenti di codice",
+            "renderPagesAddData": "Inserisci percorsi personalizzati...",
+            "renderPagesValidData": "detail, account, login...",
+            "activeFrom": "Attivo da",
+            "activeTo": "Attivo fino a"
+        },
+        "button": {
+            "addCodeSnippets": "Aggiungi nuovo",
+            "cancel": "Annulla",
+            "save": "Salva"
+        },
+        "notification": {
+            "saveSuccess": "Salvato con successo",
+            "saveError": "Errore durante il salvataggio..."
+        }
+    },
+    "global": {
+        "entities": {
+            "sw_commerce_code_snippet": "Frammenti di codice"
+        }
+    }
+}

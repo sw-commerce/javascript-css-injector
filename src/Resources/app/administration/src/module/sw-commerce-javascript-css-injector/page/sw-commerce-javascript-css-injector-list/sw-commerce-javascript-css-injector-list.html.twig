@@ -1,0 +1,148 @@
+{% block sw_commerce_javascript_css_injector_list %}
+    <sw-page class="sw-commerce-javascript-css-injector-list">
+        {% block sw_commerce_javascript_css_injector_list_smart_bar_header %}
+            <template #search-bar>
+                {% block sw_commerce_javascript_css_injector_list_smart_bar_search_bar %}
+                    <sw-search-bar
+                            initial-search-type="sw_commerce_code_snippet"
+                            :initial-search="term"
+                            :placeholder="$tc('swcommerce-javascript-css-injector.general.search')"
+                            @search="onSearch"
+                    />
+                {% endblock %}
+            </template>
+
+            <template #smart-bar-header>
+                <h2>{{ $tc('swcommerce-javascript-css-injector.general.header') }}
+                    <span class="sw-page__smart-bar-amount">
+                    ({{ total }})
+                </span>
+                </h2>
+            </template>
+        {% endblock %}
+
+        {% block sw_commerce_javascript_css_injector_list_smart_bar_actions %}
+            <template #smart-bar-actions>
+                <sw-button
+                        variant="primary"
+                        :routerLink="{ name: 'sw.commerce.javascript.css.injector.create' }"
+                >
+                    {{ $t('swcommerce-javascript-css-injector.button.addCodeSnippets') }}
+                </sw-button>
+            </template>
+        {% endblock %}
+
+        <template #content>
+            {% block sw_commerce_javascript_css_injector_list_content %}
+                <sw-entity-listing
+                        v-if="isLoading || (codeSnippets && entitySearchable)"
+                        :items="codeSnippets"
+                        :repository="codeSnippetRepository"
+                        :columns="columns"
+                        detailRoute="sw.commerce.javascript.css.injector.detail"
+                        :is-loading="isLoading"
+                        full-page
+                        disable-data-fetching
+                        show-selection
+                        @selection-change="updateSelection"
+                        @update-records="updateRecords"
+                        @column-sort="onSortColumn"
+                        @page-change="onPageChange"
+                >
+
+                    {% block sw_commerce_javascript_css_injector_list_grid_columns %}
+                        {% block sw_commerce_javascript_css_injector_list_grid_columns_name %}
+                            <template #column-name="{ item }">
+                                <a @click="handeClickDetail(item)">
+                                    {{ item.name }}
+                                </a>
+                            </template>
+                        {% endblock %}
+
+                        {% block sw_commerce_javascript_css_injector_list_grid_columns_active %}
+                            <template #column-active="{ item }">
+                                <sw-data-grid-column-boolean
+                                        :value="item.active"
+                                        :isInlineEdit="false">
+                                </sw-data-grid-column-boolean>
+                            </template>
+                        {% endblock %}
+
+                        {% block sw_commerce_javascript_css_injector_list_grid_columns_render_pages %}
+                            <template #column-renderPages="{ item }">
+                                <div v-if="item.renderPages.length">
+                                    <sw-label
+                                            v-for="renderPage in item.renderPages"
+                                            :key="renderPage">
+                                        {{ renderPage }}
+                                    </sw-label>
+                                </div>
+                                <span v-else>
+                                    {{ $tc('swcommerce-javascript-css-injector.helpText.renderOnAll') }}
+                                </span>
+                            </template>
+                        {% endblock %}
+
+                        {% block sw_commerce_javascript_css_injector_list_grid_columns_created_at %}
+                            <template #column-createdAt="{ item }">
+                                {{ dateFilter(item.createdAt) }}
+                            </template>
+                        {% endblock %}
+
+                        {% block sw_commerce_javascript_css_injector_list_grid_columns_sales_channel %}
+                            <template #column-salesChannels="{ item }">
+                                <div v-if="item.salesChannels.length">
+                                    <sw-label
+                                            v-for="salesChannel in item.salesChannels"
+                                            :key="salesChannel.id">
+                                        {{ salesChannel.translated.name || salesChannel.name }}
+                                    </sw-label>
+                                </div>
+                                <span v-else>
+                                    ---
+                                </span>
+                            </template>
+                        {% endblock %}
+                    {% endblock %}
+                </sw-entity-listing>
+
+                <template v-if="!isLoading && !total">
+                    <sw-empty-state
+                            v-if="isValidTerm(term)"
+                            :title="$tc('sw-empty-state.messageNoResultTitle')"
+                    >
+                        <template #icon>
+                            <img
+                                    :src="assetFilter('/administration/static/img/empty-states/order-empty-state.svg')"
+                                    :alt="$tc('sw-empty-state.messageNoResultTitle')"
+                            >
+                        </template>
+
+                        <template #default>
+                            {{ $tc('sw-empty-state.messageNoResultSublineBefore') }}
+                            <router-link
+                                    class="sw-empty-state__description-link"
+                                    :to="{ name: 'sw.profile.index.searchPreferences' }"
+                            >
+                                {{ $tc('sw-empty-state.messageNoResultSublineLink') }}
+                            </router-link>
+                            {{ $tc('sw-empty-state.messageNoResultSublineAfter') }}
+                        </template>
+                    </sw-empty-state>
+
+                    <sw-empty-state
+                            v-else
+                            :title="$tc('sw-empty-state.messageNoResultTitle')"
+                    >
+                        <template #icon>
+                            <img
+                                    :src="assetFilter('/administration/static/img/empty-states/order-empty-state.svg')"
+                                    :alt="$tc('sw-empty-state.messageNoResultTitle')"
+                            >
+                        </template>
+                    </sw-empty-state>
+                </template>
+            {% endblock %}
+        </template>
+    </sw-page>
+{% endblock %}
