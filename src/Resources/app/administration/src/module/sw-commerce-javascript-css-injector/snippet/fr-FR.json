@@ -1,0 +1,57 @@
+{
+    "swcommerce-javascript-css-injector": {
+        "general": {
+            "title": "Extraits de code",
+            "search": "Rechercher un extrait...",
+            "header": "Extraits de code",
+            "menuTitle": "Extraits de code JS/CSS supplémentaires"
+        },
+        "columns": {
+            "nameLabel": "Nom",
+            "activeLabel": "Actif",
+            "createdAtLabel": "Créé le",
+            "salesChannelsLabel": "Appliqué aux canaux de vente",
+            "renderPages": "Afficher sur les pages"
+        },
+        "helpText": {
+            "renderPages": "Saisissez les pages où vous souhaitez injecter les extraits de code ci-dessus. Si ce champ est vide, le code sera injecté sur toutes les pages des canaux de vente sélectionnés.",
+            "renderOnAll": "Toutes",
+            "activeFrom": "S'il n'y a pas de date spécifiée, l'extrait sera actif tout le temps"
+        },
+        "label": {
+            "active": "Actif",
+            "name": "Nom",
+            "salesChannels": "Canaux de vente",
+            "description": "Description",
+            "css": "CSS/SCSS",
+            "js": "JavaScript",
+            "renderPages": "Points de terminaison pour injecter les extraits",
+            "activeFrom": "Actif à partir du",
+            "activeTo": "Actif jusqu'au"
+        },
+        "placeholder": {
+            "name": "Saisir le nom...",
+            "salesChannels": "Choisir les canaux de vente...",
+            "description": "Saisir une description...",
+            "renderPages": "Points de terminaison pour injecter les extraits",
+            "renderPagesAddData": "Saisir des routes personnalisées...",
+            "renderPagesValidData": "detail, account, login...",
+            "activeFrom": "Actif à partir du",
+            "activeTo": "Actif jusqu'au"
+        },
+        "button": {
+            "addCodeSnippets": "Ajouter un nouvel extrait",
+            "cancel": "Annuler",
+            "save": "Enregistrer"
+        },
+        "notification": {
+            "saveSuccess": "Enregistré avec succès",
+            "saveError": "Une erreur est survenue..."
+        }
+    },
+    "global": {
+        "entities": {
+            "sw_commerce_code_snippet": "Extraits de code"
+        }
+    }
+}

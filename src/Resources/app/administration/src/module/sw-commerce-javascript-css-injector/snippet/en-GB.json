@@ -1,0 +1,57 @@
+{
+    "swcommerce-javascript-css-injector": {
+        "general": {
+            "title": "Code-Snippets",
+            "search": "Nach Snippet suchen...",
+            "header": "Code-Snippets",
+            "menuTitle": "Zusätzliche JS/CSS-Code-Snippets"
+        },
+        "columns": {
+            "nameLabel": "Name",
+            "activeLabel": "Aktiv",
+            "createdAtLabel": "Erstellt am",
+            "salesChannelsLabel": "Angewendet auf Verkaufskanäle",
+            "renderPages": "Auf Seiten rendern"
+        },
+        "helpText": {
+            "renderPages": "Gib Seiten ein, auf denen der obige Code eingefügt werden soll. Wenn leer, wird der Code auf allen Seiten für die ausgewählten Verkaufskanäle eingefügt.",
+            "renderOnAll": "Alle",
+            "activeFrom": "Wenn kein Datum angegeben ist, gilt es dauerhaft"
+        },
+        "label": {
+            "active": "Aktiv",
+            "name": "Name",
+            "salesChannels": "Verkaufskanäle",
+            "description": "Beschreibung",
+            "css": "CSS/SCSS",
+            "js": "JavaScript",
+            "renderPages": "Endpunkte zum Einfügen von Code-Snippets",
+            "activeFrom": "Aktiv ab",
+            "activeTo": "Aktiv bis"
+        },
+        "placeholder": {
+            "name": "Name eingeben...",
+            "salesChannels": "Verkaufskanäle auswählen...",
+            "description": "Beschreibung eingeben...",
+            "renderPages": "Endpunkte zum Einfügen von Code-Snippets",
+            "renderPagesAddData": "Benutzerdefinierte Routen eingeben...",
+            "renderPagesValidData": "detail, account, login...",
+            "activeFrom": "Aktiv ab",
+            "activeTo": "Aktiv bis"
+        },
+        "button": {
+            "addCodeSnippets": "Neu hinzufügen",
+            "cancel": "Abbrechen",
+            "save": "Speichern"
+        },
+        "notification": {
+            "saveSuccess": "Erfolgreich gespeichert",
+            "saveError": "Fehler aufgetreten..."
+        }
+    },
+    "global": {
+        "entities": {
+            "sw_commerce_code_snippet": "Code-Snippets"
+        }
+    }
+}
