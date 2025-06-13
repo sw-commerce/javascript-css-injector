@@ -1,0 +1,32 @@
+name: Code Style & Tests
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  code-style:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer
+
+      - name: Install dependencies
+        run: composer install --no-interaction --no-progress
+
+      - name: Run PHPUnit tests
+        run: vendor/bin/phpunit --configuration phpunit.xml.dist
+
+      - name: Run Code Style Checks
+        run: |
+          vendor/bin/php-cs-fixer fix --allow-risky yes --dry-run --diff
+          vendor/bin/phpcs
+          vendor/bin/phpstan

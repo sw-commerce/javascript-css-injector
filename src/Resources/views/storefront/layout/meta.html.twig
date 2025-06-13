@@ -1,0 +1,12 @@
+{% sw_extends '@Storefront/storefront/layout/meta.html.twig' %}
+
+{% block layout_head_javascript_feature %}
+
+    {% if page.extensions.codeSnippets.css is not empty %}
+        <style type="text/css">
+            {{ page.extensions.codeSnippets.css|raw }}
+        </style>
+    {% endif %}
+
+    {{ parent() }}
+{% endblock %}

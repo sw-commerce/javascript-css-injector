@@ -1,0 +1,60 @@
+{
+    "name": "swcommerce/javascript-css-injector",
+    "description": "SwCommerce JavaScript/CSS Injector",
+    "version": "1.0.1",
+    "type": "shopware-platform-plugin",
+    "license": "proprietary",
+    "require": {
+        "shopware/core": "~v6.6",
+        "shopware/administration": "*",
+        "shopware/storefront": "*"
+    },
+    "authors": [
+        {
+            "name": "swcommerce.com",
+            "homepage": "https://swcommerce.com",
+            "role": "Manufacturer"
+        }
+    ],
+    "extra": {
+        "shopware-plugin-class": "SwCommerce\\JavascriptCSSInjector\\SwCommerceJavascriptCSSInjector",
+        "copyright": "(c) by swcommerce.com",
+        "label": {
+            "de-DE": "SwCommerce JS/CSS Injector",
+            "en-GB": "SwCommerce JS/CSS Injector"
+        },
+        "description": {
+            "de-DE": "Container Manager zum einfachen Hinzufügen von benutzerdefiniertem JavaScript und/oder SCSS zur Theme-Kompilierung.",
+            "en-GB": "Container manager to easily add custom JavaScript and/or SCSS to the theme compilation."
+        },
+        "manufacturerLink": {
+            "de-DE": "https://swcommerce.com",
+            "en-GB": "https://swcommerce.com"
+        },
+        "supportLink": {
+            "de-DE": "https://swcommerce.com/support",
+            "en-GB": "https://swcommerce.com/support"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "SwCommerce\\JavascriptCSSInjector\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SwCommerce\\JavascriptCSSInjector\\Test\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.12",
+        "phpstan/phpstan": "^2.1",
+        "friendsofphp/php-cs-fixer": "^3.75",
+        "phpunit/phpunit": "^12.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": false
+        }
+    }
+}

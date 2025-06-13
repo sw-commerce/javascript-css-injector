@@ -1,0 +1,57 @@
+{
+    "swcommerce-javascript-css-injector": {
+        "general": {
+            "title": "Code snippets",
+            "search": "Search for snippet...",
+            "header": "Code snippets",
+            "menuTitle": "Additional js/css code snippets"
+        },
+        "columns": {
+            "nameLabel": "Name",
+            "activeLabel": "Active",
+            "createdAtLabel": "Created at",
+            "salesChannelsLabel": "Applied for sales channels",
+            "renderPages": "Render on pages"
+        },
+        "helpText": {
+            "renderPages": "Input pages where you want to inject above code snippets, if left blank, then all pages will be affected for selected sales channels.",
+            "renderOnAll": "All",
+            "activeFrom": "If no date is specified, it's valid indefinitely"
+        },
+        "label": {
+            "active": "Active",
+            "name": "Name",
+            "salesChannels": "Sales channels",
+            "description": "Description",
+            "css": "CSS/SCSS",
+            "js": "Javascript",
+            "renderPages": "Endpoints to inject code snippets",
+            "activeFrom": "Active from",
+            "activeTo": "Active until"
+        },
+        "placeholder": {
+            "name": "Enter name...",
+            "salesChannels": "Choose sales channels...",
+            "description": "Enter description...",
+            "renderPages": "Endpoints to inject code snippets",
+            "renderPagesAddData": "Enter custom routes...",
+            "renderPagesValidData": "detail, account, login...",
+            "activeFrom": "Active from",
+            "activeTo": "Active until"
+        },
+        "button": {
+            "addCodeSnippets": "Add new",
+            "cancel": "Cancel",
+            "save": "Save"
+        },
+        "notification": {
+            "saveSuccess": "Saved successfully",
+            "saveError": "Error occured..."
+        }
+    },
+    "global": {
+        "entities": {
+            "sw_commerce_code_snippet": "Code snippets"
+        }
+    }
+}

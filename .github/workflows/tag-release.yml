@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Version of the project
+        id: version
+        uses: 'euberdeveloper/ga-project-version@main'
+        with:
+          package-manager: 'composer'
+
+      - name: Add release tag
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "${{ steps.version.outputs.version }}"
+          prerelease: false
